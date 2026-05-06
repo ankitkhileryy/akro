@@ -1,0 +1,23 @@
+# Source code - Private (do not upload)
+src/
+
+# Build artifacts
+*.syso
+*.rc
+
+# Test files
+*.test
+
+# Internal notes
+website-content/
+
+# npm package (separate repo)
+npm-package/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Large binary files (upload via GitHub Releases instead)
+installer/*.exe

@@ -1,0 +1,298 @@
+
+Akro Programming Language — Language Guide
+by ST
+
+---
+
+Contents
+
+  1. Variables
+  2. Types
+  3. Functions
+  4. Control Flow
+  5. Loops
+  6. Arrays
+  7. Maps
+  8. Structs
+  9. Enums
+  10. Error Handling
+  11. Pattern Matching
+  12. Async / Await
+  13. Imports
+
+---
+
+1. Variables
+
+  x := 10           // infer int
+  name := "Akro"    // infer string
+  pi := 3.14        // infer float
+  ok := true        // infer bool
+
+  let a = 5         // immutable
+  mut b = 5         // mutable
+  const MAX = 100   // constant
+
+---
+
+2. Types
+
+  int       whole numbers       42, -7, 0
+  float     decimal numbers     3.14, -0.5
+  string    text                "hello", "world"
+  bool      true or false       true, false
+  nil       no value            nil
+  []int     array of ints       [1, 2, 3]
+  map       key-value pairs     {"a": 1}
+
+---
+
+3. Functions
+
+  Basic:
+    fn greet(name) {
+        say "Hello, {name}!"
+    }
+
+  With return:
+    fn add(a, b) {
+        return a + b
+    }
+
+  With type hints:
+    fn multiply(a: int, b: int) -> int {
+        return a * b
+    }
+
+  Default parameters:
+    fn greet(name, greeting = "Hello") {
+        say "{greeting}, {name}!"
+    }
+
+  Variadic:
+    fn sum(...nums) {
+        total := 0
+        for n in nums { total += n }
+        return total
+    }
+
+  Anonymous:
+    double := fn(x) { return x * 2 }
+
+  Async:
+    async fn fetchData(url) {
+        data := await http_get(url)
+        return data
+    }
+
+---
+
+4. Control Flow
+
+  if / elif / else:
+    if x > 10 {
+        say "big"
+    } elif x == 10 {
+        say "equal"
+    } else {
+        say "small"
+    }
+
+  Ternary:
+    label := x > 0 ? "positive" : "negative"
+
+---
+
+5. Loops
+
+  For-in (iterate):
+    for i in 0..5 {
+        say i
+    }
+    // prints 0 1 2 3 4
+
+  For-in inclusive:
+    for i in 0..=5 {
+        say i
+    }
+    // prints 0 1 2 3 4 5
+
+  For-in array:
+    for item in ["a", "b", "c"] {
+        say item
+    }
+
+  For with index:
+    for i, v in ["x", "y", "z"] {
+        say "{i}: {v}"
+    }
+
+  While:
+    while x > 0 {
+        x -= 1
+    }
+
+  Infinite loop:
+    loop {
+        say "forever"
+        break
+    }
+
+  Break / Continue:
+    for i in 0..10 {
+        if i == 5 { break }
+        if i % 2 == 0 { continue }
+        say i
+    }
+
+---
+
+6. Arrays
+
+  nums := [1, 2, 3, 4, 5]
+
+  say nums[0]          // 1
+  say len(nums)        // 5
+  say nums[1..3]       // [2, 3]
+
+  nums = append(nums, 6)
+  nums = reverse(nums)
+  nums = sort(nums)
+
+  mapped  := map(nums, fn(x) { return x * 2 })
+  evens   := filter(nums, fn(x) { return x % 2 == 0 })
+  total   := reduce(nums, fn(a, b) { return a + b }, 0)
+
+---
+
+7. Maps
+
+  person := {
+      "name": "ST",
+      "age": 20,
+      "lang": "Akro"
+  }
+
+  say person["name"]        // ST
+  person["city"] = "India"
+
+  for key in keys(person) {
+      say "{key}: {person[key]}"
+  }
+
+  has(person, "name")       // true
+  delete(person, "age")
+
+---
+
+8. Structs
+
+  struct Point {
+      x: int
+      y: int
+  }
+
+  struct Person {
+      name: string
+      age:  int = 0
+  }
+
+  p := Point(10, 20)
+  say p.x    // 10
+  say p.y    // 20
+
+  impl Point {
+      fn distance(self) -> float {
+          return sqrt(self.x ** 2 + self.y ** 2)
+      }
+  }
+
+  say p.distance()
+
+---
+
+9. Enums
+
+  enum Direction {
+      North
+      South
+      East
+      West
+  }
+
+  dir := Direction.North
+
+  match dir {
+      case Direction.North => say "Going North"
+      case Direction.South => say "Going South"
+      default => say "Other direction"
+  }
+
+---
+
+10. Error Handling
+
+  try {
+      result := divide(10, 0)
+  } catch(e) {
+      say "Error: {e}"
+  }
+
+  throw "something went wrong"
+
+  // Custom error
+  throw {"code": 404, "msg": "Not found"}
+
+---
+
+11. Pattern Matching
+
+  match x {
+      case 1       => say "one"
+      case 2 | 3   => say "two or three"
+      case 4..=9   => say "four to nine"
+      default      => say "other"
+  }
+
+  // Match with guard
+  match score {
+      case n if n >= 90 => say "A"
+      case n if n >= 80 => say "B"
+      default           => say "F"
+  }
+
+---
+
+12. Async / Await
+
+  async fn getUser(id) {
+      user := await fetchUser(id)
+      return user
+  }
+
+  async fn main {
+      user := await getUser(1)
+      say "Hello, {user.name}"
+  }
+
+---
+
+13. Imports
+
+  import "std/math"
+  import "std/string"
+  import "std/array"
+
+  from "std/math" import sqrt, pow, PI
+
+  // Local file
+  import "./utils"
+
+---
+
+Next: Web Development → docs/web.txt
+
+---
+
+Akro — Fast. Simple. Web-Ready.
+© 2026 ST. All rights reserved.

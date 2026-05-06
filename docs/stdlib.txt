@@ -1,0 +1,179 @@
+
+Akro Programming Language — Standard Library
+by ST
+
+---
+
+Built-in Functions
+
+  These are always available. No import needed.
+
+  ── Output ──────────────────────────────────────
+
+  say(...)              Print with newline
+  print(...)            Print without newline
+  println(...)          Print with newline
+
+  say "Hello"           → Hello
+  say "x = {x}"        → x = 10
+  say 1, 2, 3           → 1 2 3
+
+  ── Type Conversion ─────────────────────────────
+
+  int(x)                Convert to integer
+  float(x)              Convert to float
+  str(x)                Convert to string
+  bool(x)               Convert to boolean
+
+  int("42")             → 42
+  float("3.14")         → 3.14
+  str(100)              → "100"
+  bool(0)               → false
+
+  ── Type Info ───────────────────────────────────
+
+  type(x)               Get type name as string
+  typeof(x)             Same as type()
+  is_nil(x)             Check if nil
+
+  type(42)              → "int"
+  type("hi")            → "string"
+  type([1,2])           → "array"
+
+  ── Math ────────────────────────────────────────
+
+  abs(x)                Absolute value
+  sqrt(x)               Square root
+  pow(base, exp)        Power
+  floor(x)              Round down
+  ceil(x)               Round up
+  round(x)              Round to nearest
+  min(a, b)             Minimum
+  max(a, b)             Maximum
+  sum(arr)              Sum of array
+
+  abs(-5)               → 5
+  sqrt(16)              → 4.0
+  pow(2, 10)            → 1024.0
+  floor(3.7)            → 3
+  ceil(3.2)             → 4
+
+  ── Math Constants ──────────────────────────────
+
+  PI                    3.141592653589793
+  E                     2.718281828459045
+  INF                   Infinity
+
+  ── Trig ────────────────────────────────────────
+
+  sin(x)   cos(x)   tan(x)
+  asin(x)  acos(x)  atan(x)  atan2(y, x)
+
+  ── Random ──────────────────────────────────────
+
+  rand()                Random float 0.0 to 1.0
+  rand(min, max)        Random float in range
+  rand_int(min, max)    Random integer in range
+
+  rand_int(1, 6)        → random dice roll
+
+  ── String Functions ────────────────────────────
+
+  len(s)                Length of string
+  upper(s)              Uppercase
+  lower(s)              Lowercase
+  trim(s)               Remove whitespace
+  split(s, sep)         Split into array
+  join(arr, sep)        Join array into string
+  replace(s, old, new)  Replace substring
+  contains(s, sub)      Check if contains
+  starts_with(s, pre)   Check prefix
+  ends_with(s, suf)     Check suffix
+  index_of(s, sub)      Find position (-1 if not found)
+  slice(s, start, end)  Substring
+
+  upper("hello")        → "HELLO"
+  split("a,b,c", ",")   → ["a", "b", "c"]
+  join(["a","b"], "-")  → "a-b"
+  contains("hello", "ell") → true
+
+  ── Array Functions ─────────────────────────────
+
+  len(arr)              Length
+  append(arr, item)     Add item (returns new array)
+  pop(arr)              Remove and return last item
+  reverse(arr)          Reverse array
+  sort(arr)             Sort array
+  slice(arr, s, e)      Sub-array
+  index_of(arr, item)   Find index (-1 if not found)
+  flat(arr)             Flatten nested arrays
+  zip(a, b)             Zip two arrays into tuples
+
+  map(arr, fn)          Transform each element
+  filter(arr, fn)       Keep matching elements
+  reduce(arr, fn, init) Reduce to single value
+  any(arr, fn)          True if any match
+  all(arr, fn)          True if all match
+
+  nums := [3, 1, 4, 1, 5]
+  sort(nums)            → [1, 1, 3, 4, 5]
+  reverse(nums)         → [5, 4, 3, 1, 1]
+  map(nums, fn(x) { return x * 2 })  → [6, 2, 8, 2, 10]
+
+  ── Map Functions ───────────────────────────────
+
+  keys(m)               Get all keys as array
+  values(m)             Get all values as array
+  has(m, key)           Check if key exists
+  delete(m, key)        Remove a key
+  len(m)                Number of keys
+
+  m := {"a": 1, "b": 2}
+  keys(m)               → ["a", "b"]
+  has(m, "a")           → true
+  delete(m, "b")
+
+  ── IO ──────────────────────────────────────────
+
+  input(prompt)         Read line from user
+  read_file(path)       Read file as string
+  write_file(path, s)   Write string to file
+
+  name := input("Enter name: ")
+  say "Hello, {name}!"
+
+  data := read_file("data.txt")
+  write_file("out.txt", "Hello!")
+
+  ── System ──────────────────────────────────────
+
+  exit(code)            Exit program
+  env_get(key)          Get environment variable
+  time_now()            Current time in milliseconds
+  sleep(ms)             Sleep for milliseconds
+
+  sleep(1000)           // wait 1 second
+  t := time_now()       // timestamp
+
+  ── Utility ─────────────────────────────────────
+
+  assert(cond, msg)     Assert condition
+  panic(msg)            Crash with message
+  copy(x)               Deep copy array or map
+  format(fmt, ...)      Format string (like printf)
+  range(n)              0 to n-1
+  range(s, e)           s to e-1
+  range(s, e, step)     with step
+
+  range(5)              → 0,1,2,3,4
+  range(2, 8)           → 2,3,4,5,6,7
+  format("%.2f", 3.14159) → "3.14"
+
+---
+
+Next: Examples → docs/examples.txt
+
+---
+
+Akro — Fast. Simple. Web-Ready.
+© 2026 ST. All rights reserved.

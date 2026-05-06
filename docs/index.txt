@@ -1,0 +1,61 @@
+
+Akro Programming Language
+by ST
+
+Akro is a fast, simple, and web-ready programming language.
+Write less. Do more. Run anywhere.
+
+  akro run main.ak
+
+---
+
+What is Akro?
+
+Akro is a general-purpose programming language designed to be
+as simple as Python, as fast as Go, and as web-friendly as
+JavaScript — all in one.
+
+It compiles to JavaScript for the browser, and runs natively
+on any machine via its Go-powered interpreter.
+
+Created by ST.
+
+---
+
+Install
+
+  Windows:
+    Run install.ps1 as Administrator
+
+  From source:
+    git clone https://github.com/ST/akro
+    cd akro/src
+    go build -o akro.exe .
+
+---
+
+Quick Start
+
+  # hello.ak
+  fn main {
+      say "Hello, World!"
+  }
+
+  akro run hello.ak
+  → Hello, World!
+
+---
+
+Pages
+
+  → Getting Started     docs/getting-started.txt
+  → Language Guide      docs/language.txt
+  → Web Development     docs/web.txt
+  → Standard Library    docs/stdlib.txt
+  → Examples            docs/examples.txt
+  → FAQ                 docs/faq.txt
+
+---
+
+Akro — Fast. Simple. Web-Ready.
+© 2026 ST. All rights reserved.

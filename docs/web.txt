@@ -1,0 +1,204 @@
+
+Akro Programming Language — Web Development
+by ST
+
+---
+
+Akro on the Web
+
+  Akro transpiles to JavaScript.
+  Write Akro, run in the browser.
+  No extra tools. No complex setup.
+
+    akro transpile app.ak
+    // → app.js
+
+---
+
+Why Akro for Web?
+
+  JavaScript:                    Akro:
+  ─────────────────────────────────────────────────
+  const x = 10;                  x := 10
+  console.log("Hello " + x);    say "Hello {x}"
+  function add(a, b) {           fn add(a, b) {
+    return a + b;                    return a + b
+  }                              }
+  arr.forEach(x => {             for item in arr {
+    console.log(x);                  say item
+  });                            }
+  ─────────────────────────────────────────────────
+
+  Akro code is cleaner, shorter, and easier to read.
+
+---
+
+Hello Web — Step by Step
+
+  Step 1: Write Akro code
+  ───────────────────────
+  // app.ak
+  fn main {
+      say "Akro is running in the browser!"
+
+      btn := document.getElementById("btn")
+      btn.onclick = fn {
+          document.body.style.background = "#6c63ff"
+          say "Button clicked!"
+      }
+  }
+
+  Step 2: Transpile
+  ─────────────────
+  akro transpile app.ak
+  // Creates: app.js
+
+  Step 3: HTML
+  ────────────
+  <!DOCTYPE html>
+  <html>
+  <head>
+      <title>My Akro App</title>
+  </head>
+  <body>
+      <h1>Hello from Akro!</h1>
+      <button id="btn">Click Me</button>
+      <script src="app.js"></script>
+  </body>
+  </html>
+
+  Step 4: Open in browser
+  ───────────────────────
+  Open index.html in any browser.
+  Done!
+
+---
+
+DOM Manipulation
+
+  // Get element
+  el := document.getElementById("myDiv")
+
+  // Change text
+  el.innerText = "Hello from Akro!"
+
+  // Change style
+  el.style.color = "red"
+  el.style.fontSize = "24px"
+
+  // Add class
+  el.classList.add("active")
+
+  // Create element
+  p := document.createElement("p")
+  p.innerText = "New paragraph"
+  document.body.appendChild(p)
+
+  // Event listener
+  el.addEventListener("click", fn(event) {
+      say "Clicked!"
+  })
+
+---
+
+Fetch / HTTP Requests
+
+  async fn loadData {
+      response := await fetch("https://api.example.com/data")
+      data := await response.json()
+      say "Got: {data}"
+  }
+
+  // POST request
+  async fn sendData(payload) {
+      response := await fetch("https://api.example.com/save", {
+          "method": "POST",
+          "body": JSON.stringify(payload)
+      })
+      return await response.json()
+  }
+
+---
+
+Counter App Example
+
+  // counter.ak
+  count := 0
+
+  fn increment {
+      count += 1
+      document.getElementById("display").innerText = str(count)
+  }
+
+  fn decrement {
+      count -= 1
+      document.getElementById("display").innerText = str(count)
+  }
+
+  fn main {
+      document.getElementById("inc").onclick = increment
+      document.getElementById("dec").onclick = decrement
+  }
+
+  // counter.html
+  // <button id="dec">-</button>
+  // <span id="display">0</span>
+  // <button id="inc">+</button>
+  // <script src="counter.js"></script>
+
+---
+
+Todo App Example
+
+  // todo.ak
+  todos := []
+
+  fn addTodo(text) {
+      todos = append(todos, text)
+      render()
+  }
+
+  fn render {
+      list := document.getElementById("list")
+      list.innerHTML = ""
+      for todo in todos {
+          li := document.createElement("li")
+          li.innerText = todo
+          list.appendChild(li)
+      }
+  }
+
+  fn main {
+      btn := document.getElementById("addBtn")
+      btn.onclick = fn {
+          input := document.getElementById("input")
+          addTodo(input.value)
+          input.value = ""
+      }
+  }
+
+---
+
+Backend Web (Coming Soon)
+
+  Akro will support backend web development:
+
+  // server.ak (v0.2.0)
+  import "std/http"
+
+  fn main {
+      http.get("/", fn(req, res) {
+          res.send("Hello from Akro server!")
+      })
+      http.listen(3000)
+      say "Server running on port 3000"
+  }
+
+---
+
+Next: Standard Library → docs/stdlib.txt
+
+---
+
+Akro — Fast. Simple. Web-Ready.
+© 2026 ST. All rights reserved.

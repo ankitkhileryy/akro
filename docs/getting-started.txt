@@ -1,0 +1,82 @@
+
+Akro Programming Language — Getting Started
+by ST
+
+---
+
+Install Akro
+
+  Windows (Recommended):
+    1. Download akro.exe
+    2. Right-click install.ps1 → Run as Administrator
+    3. Open a new terminal
+    4. Type: akro version
+
+  From Source (requires Go 1.21+):
+    git clone https://github.com/ST/akro
+    cd akro/src
+    go build -o akro.exe .
+    akro version
+
+---
+
+Your First Program
+
+  Create a file called hello.ak:
+
+    fn main {
+        say "Hello, World!"
+    }
+
+  Run it:
+
+    akro run hello.ak
+
+  Output:
+
+    Hello, World!
+
+---
+
+Variables
+
+  Akro uses := for type inference (like Rust/Go):
+
+    name := "Akro"
+    age  := 3
+    pi   := 3.14
+    ok   := true
+
+  You can also use let:
+
+    let x = 10
+    mut y = 20    // mutable
+    const Z = 99  // constant
+
+---
+
+Printing
+
+  say "Hello"              // with newline
+  say "Name: {name}"      // string interpolation
+  say "1 + 1 = {1 + 1}"  // expressions in strings
+
+---
+
+Running Code
+
+  akro run main.ak          Run a file
+  akro repl                 Interactive shell
+  akro transpile main.ak    Convert to JavaScript
+  akro check main.ak        Check for errors
+  akro fmt main.ak          Format code
+  akro version              Show version
+
+---
+
+Next: Language Guide → docs/language.txt
+
+---
+
+Akro — Fast. Simple. Web-Ready.
+© 2026 ST. All rights reserved.

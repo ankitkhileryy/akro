@@ -1,0 +1,22 @@
+AKRO PROGRAMMING LANGUAGE
+=========================
+
+Original Creator : ankitkhileryy
+Creation Date    : 2026
+Language Name    : Akro
+File Extension   : .ak
+Repository       : https://github.com/ankitkhileryy/akro
+
+This file serves as official notice of authorship and ownership.
+
+Akro is an original programming language designed and implemented
+by ankitkhileryy. The language design, syntax specification, standard library,
+and all associated tooling were created from scratch by ankitkhileryy.
+
+Any use of the Akro name, logo, or implementation must credit
+ankitkhileryy as the original creator.
+
+Proof of creation is maintained via:
+- Git commit history with timestamps
+- GitHub repository creation date
+- This NOTICE file embedded in all releases
