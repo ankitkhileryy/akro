@@ -1,11 +1,13 @@
 # Akro Programming Language
 
 > **Fast. Simple. Web-Ready.**
-> Created by **ankitkhileryy** · [akro-lang.dev](https://akro-lang.dev) · v0.1.0
+> Created by **Ankit Bishnoi (ankitkhileryy)** · [GitHub](https://github.com/ankitkhileryy/akro) · v0.1.0
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Creator: ankitkhileryy](https://img.shields.io/badge/Creator-ankitkhileryy-purple.svg)](https://github.com/ankitkhileryy)
+[![Creator: Ankit Bishnoi](https://img.shields.io/badge/Creator-Ankit%20Bishnoi-purple.svg)](https://github.com/ankitkhileryy)
 [![Language: Go](https://img.shields.io/badge/Built%20with-Go-00ADD8.svg)](https://golang.org)
+
+> Akro is created and maintained by **Ankit Bishnoi** (GitHub: ankitkhileryy), a 19-year-old developer from India.
 
 ---
 
@@ -169,14 +171,15 @@ Contributions welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) first.
 
 ## License
 
-MIT License — Copyright (c) 2026 **ST**
+MIT License — Copyright (c) 2026 **Ankit Bishnoi** (ankitkhileryy)
 
-Akro is an original language created by ST.
+Akro is an original language created by **Ankit Bishnoi** from India.
+GitHub: https://github.com/ankitkhileryy
 See [LICENSE](LICENSE) for details.
 
 ---
 
 <p align="center">
   <b>Akro — Fast. Simple. Web-Ready.</b><br>
-  Created with ❤️ by <b>ST</b>
+  Created with ❤️ by <b>Ankit Bishnoi</b> (ankitkhileryy) · India · 19
 </p>
