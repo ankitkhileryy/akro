@@ -181,5 +181,5 @@ See [LICENSE](LICENSE) for details.
 
 <p align="center">
   <b>Akro — Fast. Simple. Web-Ready.</b><br>
-  Created with ❤️ by <b>Ankit Bishnoi</b> (ankitkhileryy) · India · 19
+  Created with  by <b>Ankit Bishnoi</b> (ankitkhileryy) · India · 19
 </p>
